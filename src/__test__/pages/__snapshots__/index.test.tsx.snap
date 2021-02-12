@@ -5,7 +5,7 @@ exports[`Home page matches snapshot 1`] = `
   <h1
     class="sc-bdfBwQ kszwFW"
   >
-    My page
+    helloWorld
   </h1>
 </DocumentFragment>
 `;

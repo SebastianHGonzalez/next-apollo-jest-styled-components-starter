@@ -5,6 +5,9 @@ import type {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react'
+import { MockedProvider } from '@apollo/client/testing'
+import I18nProvider from '../lib/i18n'
+
 // import { ThemeProvider } from "my-ui-lib"
 // import { TranslationProvider } from "my-i18n-lib"
 // import defaultStrings from "i18n/en-x-default"
@@ -12,7 +15,13 @@ import type {
 const Providers: FunctionComponent<{ children: ReactNode }> = ({
   children,
 }) => {
-  return <>{children}</>
+  return (
+    <MockedProvider>
+      <I18nProvider locale="es" lngDict={{}}>
+        {children}
+      </I18nProvider>
+    </MockedProvider>
+  )
   // return (
   //   <ThemeProvider theme="light">
   //     <TranslationProvider messages={defaultStrings}>
